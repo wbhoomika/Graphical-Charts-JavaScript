@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>3D Piechart</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Sector', 'Percent placed'],
+                ['Software', 24],
+                ["Bank", 4],
+                ["Product Based", 7],
+                ["IT", 65]
+            ]);
+
+            var options = {
+                title: '2019-2020: Sector Wise Placements',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+
+        google.charts.setOnLoadCallback(drawChart1);
+        function drawChart1() {
+            var data1 = google.visualization.arrayToDataTable([
+                ['Sector', 'Percent placed'],
+                ['Software', 50],
+                ["Bank", 4],
+                ["Product Based", 7],
+                ["IT", 65]
+            ]);
+
+            var options1 = {
+                title: '2018-2019: Sector Wise Placements',
+                is3D: true,
+            };
+
+            var chart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
+            chart1.draw(data1, options1);
+        }
+    </script>
+    <style>
+        .row {
+            display: flex;
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div id="piechart" style="width: 500px; height: 500px;"></div>
+        <div id="piechart1" style="width: 500px; height: 500px;"></div>
+    </div>
+</body>
+
+</html>
